@@ -29,6 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
   setupRSSFeeds();
   // 7. THEME TOGGLE (bright/dark preview)
   setupThemeToggle();
+  // 8. PALETTE SELECTOR (presets)
+  setupPaletteSelector();
 });
 
 /**
@@ -234,6 +236,53 @@ function setupThemeToggle() {
   const saved = localStorage.getItem('theme');
   if (saved === 'bright') document.documentElement.classList.add('theme-bright');
   updateIcon();
+}
+
+/**
+ * Palette selector: small color buttons next to the theme toggle
+ */
+function setupPaletteSelector() {
+  const mobileBtn = document.querySelector('header button[aria-label="Toggle menu"]');
+  if (!mobileBtn) return;
+
+  const container = document.createElement('div');
+  container.className = 'palette-selector';
+
+  const palettes = [
+    { id: 'default', title: 'Default' },
+    { id: 'pastel', title: 'Pastel' },
+    { id: 'vibrant', title: 'Vibrant' }
+  ];
+
+  palettes.forEach(p => {
+    const b = document.createElement('button');
+    b.className = 'palette-btn';
+    b.dataset.palette = p.id;
+    b.title = p.title;
+    container.appendChild(b);
+  });
+
+  mobileBtn.parentNode.insertBefore(container, mobileBtn.nextSibling);
+
+  const buttons = Array.from(container.querySelectorAll('.palette-btn'));
+
+  function applyPalette(id) {
+    // remove all palette classes first
+    document.documentElement.classList.remove('theme-pastel', 'theme-vibrant');
+    if (id === 'pastel') document.documentElement.classList.add('theme-pastel');
+    if (id === 'vibrant') document.documentElement.classList.add('theme-vibrant');
+
+    buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.palette === id));
+    localStorage.setItem('palette', id);
+  }
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => applyPalette(btn.dataset.palette));
+  });
+
+  // restore
+  const saved = localStorage.getItem('palette') || 'default';
+  applyPalette(saved);
 }
 
   function renderItems(items) {

@@ -532,6 +532,57 @@ h1, h2, h3, h4, h5, h6 {
 
 .theme-toggle i { pointer-events: none; }
 
+/* Palette selector */
+.palette-selector {
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: center;
+  margin-left: 0.6rem;
+}
+
+.palette-btn {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.06);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.palette-btn:hover { transform: translateY(-2px); }
+
+.palette-btn[data-palette="pastel"] { background: linear-gradient(90deg, #bfe9ff, #ffd3f0); }
+.palette-btn[data-palette="vibrant"] { background: linear-gradient(90deg, #00bfff, #ff5fb4); }
+.palette-btn[data-palette="default"] { background: linear-gradient(90deg, var(--accent-a), var(--accent-b)); }
+
+.palette-btn.active { box-shadow: 0 6px 20px rgba(0,0,0,0.12); transform: translateY(-3px); }
+
+/* Theme presets (variable overrides) */
+.theme-pastel {
+  --accent-a: #66c2ff;
+  --accent-b: #ffc7e6;
+  --accent-c: #9feab6;
+  --accent-d: #fff0b8;
+  --text-primary: #072033;
+  --bg-primary: #f7fbff;
+  --bg-secondary: #f2f8ff;
+  --bg-tertiary: #ffffff;
+  --bg-surface: #ffffff;
+}
+
+.theme-vibrant {
+  --accent-a: #00bfff;
+  --accent-b: #ff4fa3;
+  --accent-c: #34d04a;
+  --accent-d: #ffd25f;
+  --text-primary: #071022;
+  --bg-primary: #07192a;
+  --bg-secondary: #0b2a3f;
+  --bg-tertiary: #071a2a;
+  --bg-surface: #081a2b;
+}
+
+
 .prose h2 {
   color: var(--neon-cyan);
   margin-top: 2rem;
