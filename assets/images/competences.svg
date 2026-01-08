@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SVG wrapper that references a raster PNG named competences.png in the same folder.
+     Place your PNG at assets/images/competences.png for this to display.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1600" viewBox="0 0 1200 1600" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Tableau de compétences">
+  <title>Tableau de compétences</title>
+  <desc>Wrapper SVG that displays the PNG raster image (competences.png) placed next to this SVG.</desc>
+  <image href="competences.png" x="0" y="0" width="1200" height="1600" preserveAspectRatio="xMidYMid meet" />
+</svg>
