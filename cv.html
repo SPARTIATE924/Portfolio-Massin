@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Télécharger le CV de ALIOUCHE Massin - Étudiant BTS SIO SISR">
+    <title>CV - ALIOUCHE Massin | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <header class="fixed top-0 left-0 right-0 z-50 glass-effect">
+        <nav class="container mx-auto px-6 py-4" x-data="{ mobileMenuOpen: false }">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-bold text-glow-cyan">ALIOUCHE Massin</a>
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="alternance.html" class="nav-link">Alternance</a></li>
+                    <li><a href="competence.html" class="nav-link">Compétences</a></li>
+                    <li><a href="projets.html" class="nav-link">Projets</a></li>
+                    <li><a href="vt.html" class="nav-link">Veille Techno</a></li>
+                    <li><a href="cv.html" class="nav-link">CV</a></li>
+                </ul>
+                <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-neon-cyan text-2xl focus:outline-none" aria-label="Toggle menu">
+                    <i class="fas" :class="mobileMenuOpen ? 'fa-times' : 'fa-bars'"></i>
+                </button>
+            </div>
+            <div x-show="mobileMenuOpen" x-transition class="mobile-menu md:hidden">
+                <nav>
+                    <a href="index.html" class="block py-3">Accueil</a>
+                    <a href="alternance.html" class="block py-3">Alternance</a>
+                    <a href="competence.html" class="block py-3">Compétences</a>
+                    <a href="projets.html" class="block py-3">Projets</a>
+                    <a href="vt.html" class="block py-3">Veille Techno</a>
+                    <a href="cv.html" class="block py-3">CV</a>
+                </nav>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-20">
+        <section class="min-h-screen flex items-center py-20 bg-gradient-to-br from-bg-primary via-bg-secondary to-bg-primary">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h1 class="text-5xl font-bold mb-8 text-glow-cyan" data-animate>Mon Curriculum Vitae</h1>
+
+                    <!-- CV Download Card -->
+                    <div class="glass-effect p-12 rounded-2xl mb-12" data-animate>
+                        <div class="mb-8">
+                            <i class="fas fa-file-pdf text-8xl text-neon-pink mb-6 inline-block neon-pulse"></i>
+                        </div>
+                        <p class="text-xl text-gray-300 mb-8">
+                            Voici mon CV détaillant mon parcours personnel et professionnel.
+                        </p>
+
+                        <!-- Download Button -->
+                        <a href="https://1c618f5a-1a35-46d8-91fa-d753983fc784.filesusr.com/ugd/3c5a5a_d2e7e6c6a06942edb631bbd0f199430e.pdf"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="inline-flex items-center gap-3 px-8 py-4 text-lg font-semibold text-white rounded-lg transition-all hover:scale-105"
+                           style="background-color: var(--neon-pink); box-shadow: var(--shadow-neon-pink);">
+                            <i class="fas fa-download text-2xl"></i>
+                            <span>Télécharger mon CV</span>
+                        </a>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-animate>
+                        <div class="stat-box">
+                            <div class="text-4xl font-bold text-neon-cyan mb-2">2024-2026</div>
+                            <div class="text-sm text-gray-400 font-mono">BTS SIO SISR</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="text-4xl font-bold text-neon-green mb-2">Sodiaal</div>
+                            <div class="text-sm text-gray-400 font-mono">Alternance</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="text-4xl font-bold text-neon-purple mb-2">5000+</div>
+                            <div class="text-sm text-gray-400 font-mono">Utilisateurs supportés</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-neon-cyan/30 py-12" style="background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%);">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-neon-cyan">ALIOUCHE Massin</h3>
+                    <p class="text-gray-400 text-sm">Étudiant en BTS SIO SISR, passionné par la cybersécurité et l'administration systèmes.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-neon-green">Liens Rapides</h3>
+                    <ul class="space-y-2">
+                        <li><a href="alternance.html" class="text-gray-400 hover:text-neon-cyan transition-colors">Alternance</a></li>
+                        <li><a href="competence.html" class="text-gray-400 hover:text-neon-cyan transition-colors">Compétences</a></li>
+                        <li><a href="projets.html" class="text-gray-400 hover:text-neon-cyan transition-colors">Projets</a></li>
+                        <li><a href="vt.html" class="text-gray-400 hover:text-neon-cyan transition-colors">Veille Technologique</a></li>
+                        <li><a href="cv.html" class="text-gray-400 hover:text-neon-cyan transition-colors">CV</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-neon-pink">Contact</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="mailto:massin.aliouche@gmail.com" class="text-gray-400 hover:text-neon-cyan transition-colors flex items-center gap-2">
+                                <i class="fas fa-envelope text-neon-pink"></i>massin.aliouche@gmail.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/aliouche-massin/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-neon-cyan transition-colors flex items-center gap-2">
+                                <i class="fab fa-linkedin text-neon-pink"></i>LinkedIn
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center pt-8 border-t border-neon-cyan/20">
+                <p class="text-gray-500 text-sm font-mono">© 2026 ALIOUCHE Massin | BTS SIO SISR | Portfolio Tech/Cybersécurité</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mon alternance chez Sodiaal - Support IT et gestion d'incidents">
+    <title>Alternance - ALIOUCHE Massin | Portfolio</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-effect">
+        <nav class="container mx-auto px-6 py-4" x-data="{ mobileMenuOpen: false }">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="index.html" class="text-2xl font-bold text-glow-cyan">
+                    ALIOUCHE Massin
+                </a>
+
+                <!-- Desktop Navigation -->
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="alternance.html" class="nav-link">Alternance</a></li>
+                    <li><a href="competence.html" class="nav-link">Compétences</a></li>
+                    <li><a href="projets.html" class="nav-link">Projets</a></li>
+                    <li><a href="vt.html" class="nav-link">Veille Techno</a></li>
+                    <li><a href="cv.html" class="nav-link">CV</a></li>
+                </ul>
+
+                <!-- Mobile Menu Button -->
+                <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-neon-cyan text-2xl focus:outline-none" aria-label="Toggle menu">
+                    <i class="fas" :class="mobileMenuOpen ? 'fa-times' : 'fa-bars'"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div x-show="mobileMenuOpen"
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0 transform scale-90"
+                 x-transition:enter-end="opacity-100 transform scale-100"
+                 x-transition:leave="transition ease-in duration-200"
+                 x-transition:leave-start="opacity-100 transform scale-100"
+                 x-transition:leave-end="opacity-0 transform scale-90"
+                 class="mobile-menu md:hidden">
+                <nav>
+                    <a href="index.html" class="block py-3">Accueil</a>
+                    <a href="alternance.html" class="block py-3">Alternance</a>
+                    <a href="competence.html" class="block py-3">Compétences</a>
+                    <a href="projets.html" class="block py-3">Projets</a>
+                    <a href="vt.html" class="block py-3">Veille Techno</a>
+                    <a href="cv.html" class="block py-3">CV</a>
+                </nav>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-20">
+        <!-- Company Header Section -->
+        <section class="py-20 bg-gradient-to-br from-bg-primary via-bg-secondary to-bg-primary">
+            <div class="container mx-auto px-6">
+                <!-- Company Logo -->
+                <div class="text-center mb-12" data-animate>
+                    <div class="inline-block p-8 glass-effect rounded-2xl">
+                        <img src="https://placehold.co/400x200/1a1f3a/b026ff?text=SODIAAL"
+                             alt="Logo Sodiaal"
+                             class="h-24 mx-auto">
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-bold text-neon-purple mt-8">Entreprise</h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company Info & Missions Section -->
+        <section class="py-16 bg-bg-secondary">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Left: Company Description -->
+                    <div data-animate>
+                        <div class="glass-effect p-8 rounded-2xl h-full">
+                            <h2 class="text-3xl font-bold mb-6 text-neon-cyan">
+                                <i class="fas fa-building mr-3"></i>
+                                Sodiaal
+                            </h2>
+                            <div class="space-y-4 text-gray-300 leading-relaxed">
+                                <p>
+                                    <strong class="text-neon-cyan">Sodiaal International</strong> est la première coopérative laitière française, présente sur l'ensemble de la chaîne de valeur et notamment à l'international.
+                                </p>
+                                <p>
+                                    Son activité principale est la collecte, la transformation et la commercialisation de produits laitiers sous des marques reconnues telles que <span class="text-neon-green font-semibold">Candia</span>, <span class="text-neon-green font-semibold">Yoplait</span>, et <span class="text-neon-green font-semibold">Entremont</span>.
+                                </p>
+                                <div class="mt-6 pt-6 border-t border-neon-cyan/20">
+                                    <p class="text-sm font-mono text-gray-400">
+                                        <i class="fas fa-users text-neon-purple mr-2"></i>
+                                        Support pour 5000+ collaborateurs
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Missions -->
+                    <div data-animate>
+                        <div class="glass-effect p-8 rounded-2xl h-full">
+                            <h3 class="text-3xl font-bold mb-6 text-neon-green">
+                                <i class="fas fa-tasks mr-3"></i>
+                                Mes Missions
+                            </h3>
+                            <p class="text-gray-300 mb-6">
+                                Dans le cadre de mon alternance, j'ai intégré le siège de la DSI et suis affecté aux missions suivantes :
+                            </p>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-4 p-4 rounded-lg bg-neon-green/5 border border-neon-green/20 hover:border-neon-green/40 transition-all">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <i class="fas fa-exclamation-triangle text-2xl text-neon-green"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-white mb-1">Gestion d'incidents divers</h4>
+                                        <p class="text-sm text-gray-400">Résolution des problèmes techniques rencontrés par les utilisateurs</p>
+                                    </div>
+                                </li>
+
+                                <li class="flex items-start gap-4 p-4 rounded-lg bg-neon-green/5 border border-neon-green/20 hover:border-neon-green/40 transition-all">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <i class="fas fa-headset text-2xl text-neon-green"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-white mb-1">Support de proximité et à distance</h4>
+                                        <p class="text-sm text-gray-400">Assistance auprès des 5000 collaborateurs de l'entreprise</p>
+                                    </div>
+                                </li>
+
+                                <li class="flex items-start gap-4 p-4 rounded-lg bg-neon-green/5 border border-neon-green/20 hover:border-neon-green/40 transition-all">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <i class="fas fa-laptop text-2xl text-neon-green"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-white mb-1">Préparation et installation</h4>
+                                        <p class="text-sm text-gray-400">Logiciels, matériels (PC, imprimantes, périphériques)</p>
+                                    </div>
+                                </li>
+
+                                <li class="flex items-start gap-4 p-4 rounded-lg bg-neon-green/5 border border-neon-green/20 hover:border-neon-green/40 transition-all">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <i class="fas fa-file-alt text-2xl text-neon-green"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-white mb-1">Documentation technique</h4>
+                                        <p class="text-sm text-gray-400">Élaboration, rédaction et modification d'instructions d'installation</p>
+                                    </div>
+                                </li>
+
+                                <li class="flex items-start gap-4 p-4 rounded-lg bg-neon-green/5 border border-neon-green/20 hover:border-neon-green/40 transition-all">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <i class="fas fa-sync-alt text-2xl text-neon-green"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-white mb-1">Mise à jour du parc informatique</h4>
+                                        <p class="text-sm text-gray-400">Aide à la gestion et maintenance de l'infrastructure IT</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Gained Section -->
+        <section class="py-16 bg-gradient-to-b from-bg-primary to-bg-secondary">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12 text-neon-cyan" data-animate>
+                    Compétences développées
+                </h2>
+                <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <div class="skill-card text-center" data-animate>
+                        <i class="fas fa-tools text-4xl text-neon-cyan mb-4"></i>
+                        <h3 class="font-bold text-lg mb-2 text-white">Support Technique</h3>
+                        <p class="text-sm text-gray-400">Diagnostic et résolution d'incidents</p>
+                    </div>
+                    <div class="skill-card text-center" data-animate>
+                        <i class="fas fa-network-wired text-4xl text-neon-green mb-4"></i>
+                        <h3 class="font-bold text-lg mb-2 text-white">Infrastructure IT</h3>
+                        <p class="text-sm text-gray-400">Déploiement et maintenance</p>
+                    </div>
+                    <div class="skill-card text-center" data-animate>
+                        <i class="fas fa-comments text-4xl text-neon-purple mb-4"></i>
+                        <h3 class="font-bold text-lg mb-2 text-white">Communication</h3>
+                        <p class="text-sm text-gray-400">Relation client et pédagogie</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-neon-cyan/30 py-12" style="background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%);">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Column 1: About -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-neon-cyan">ALIOUCHE Massin</h3>
+                    <p class="text-gray-400 text-sm">
+                        Étudiant en BTS SIO SISR, passionné par la cybersécurité et l'administration systèmes.
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-neon-green">Liens Rapides</h3>
+                    <ul class="space-y-2">
+                        <li><a href="alternance.html" class="text-gray-400 hover:text-neon-cyan transition-colors">Alternance</a></li>
+                        <li><a href="competence.html" class="text-gray-400 hover:text-neon-cyan transition-colors">Compétences</a></li>
+                        <li><a href="projets.html" class="text-gray-400 hover:text-neon-cyan transition-colors">Projets</a></li>
+                        <li><a href="vt.html" class="text-gray-400 hover:text-neon-cyan transition-colors">Veille Technologique</a></li>
+                        <li><a href="cv.html" class="text-gray-400 hover:text-neon-cyan transition-colors">CV</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-neon-pink">Contact</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="mailto:massin.aliouche@gmail.com" class="text-gray-400 hover:text-neon-cyan transition-colors flex items-center gap-2">
+                                <i class="fas fa-envelope text-neon-pink"></i>
+                                massin.aliouche@gmail.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/aliouche-massin/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-neon-cyan transition-colors flex items-center gap-2">
+                                <i class="fab fa-linkedin text-neon-pink"></i>
+                                LinkedIn
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="text-center pt-8 border-t border-neon-cyan/20">
+                <p class="text-gray-500 text-sm font-mono">
+                    © 2026 ALIOUCHE Massin | BTS SIO SISR | Portfolio Tech/Cybersécurité
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
