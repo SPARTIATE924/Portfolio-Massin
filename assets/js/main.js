@@ -318,19 +318,30 @@ function setupPaletteSelector() {
     } catch (e) { /* ignore */ }
 
     setStatus('Chargement...');
-    try {
-      const res = await fetch(PROXY + encodeURIComponent(feed.url));
-      if (!res.ok) throw new Error('fetch failed');
-      const text = await res.text();
-      const items = parseFeed(text);
-      localStorage.setItem(cacheKey, JSON.stringify({ items, fetchedAt: Date.now() }));
-      setStatus('Dernière mise à jour: ' + new Date().toLocaleTimeString());
-      return items;
-    } catch (err) {
-      setStatus('Erreur lors du chargement');
-      console.error('RSS fetch error', err);
-      return [];
+
+    // Try primary proxy, then a lightweight fallback (jina.ai) if available
+    const proxies = [PROXY, 'https://r.jina.ai/http://'];
+
+    for (const p of proxies) {
+      try {
+        const url = p + encodeURIComponent(feed.url);
+        const res = await fetch(url);
+        if (!res.ok) throw new Error('fetch failed ' + res.status);
+        const text = await res.text();
+        const items = parseFeed(text);
+        if (items && items.length > 0) {
+          localStorage.setItem(cacheKey, JSON.stringify({ items, fetchedAt: Date.now() }));
+          setStatus('Dernière mise à jour: ' + new Date().toLocaleTimeString());
+          return items;
+        }
+      } catch (err) {
+        console.warn('Proxy failed:', p, err);
+        // try next proxy
+      }
     }
+
+    setStatus('Impossible de charger le flux (CORS/proxy).');
+    return [];
   }
 
   async function fetchAll() {

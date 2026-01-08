@@ -257,6 +257,20 @@
         </div>
     </footer>
 
+    <!-- Ensure homepage uses Bright theme by default -->
+    <script>
+      (function(){
+        try {
+          // Force bright theme on homepage unless user explicitly set a preference
+          var saved = localStorage.getItem('theme');
+          if (!saved || saved === 'dark') {
+            document.documentElement.classList.add('theme-bright');
+            localStorage.setItem('theme','bright');
+          }
+        } catch(e) { /* ignore */ }
+      })();
+    </script>
+
     <!-- Custom JS -->
     <script src="assets/js/main.js"></script>
 </body>
