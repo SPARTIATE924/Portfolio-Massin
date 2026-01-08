@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200" role="img" aria-labelledby="title desc">
+  <title id="title">Sodiaal logo</title>
+  <desc id="desc">Text logo: SODIAAL in purple on dark navy background</desc>
+  <rect width="100%" height="100%" fill="#1a1f3a" />
+  <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron, 'Segoe UI', Roboto, sans-serif" font-size="72" fill="#b026ff" font-weight="700">SODIAAL</text>
+</svg>
