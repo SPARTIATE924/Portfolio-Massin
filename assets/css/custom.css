@@ -532,6 +532,22 @@ h1, h2, h3, h4, h5, h6 {
 
 .theme-toggle i { pointer-events: none; }
 
+/* HERO CONTRAST FIXES */
+.hero-contrast { color: var(--text-primary); }
+.hero-contrast p, .hero-contrast .text-gray-300, .hero-contrast .text-gray-400 {
+  color: var(--text-secondary) !important;
+  font-weight: 600;
+  line-height: 1.6;
+}
+.hero-contrast .btn-primary, .hero-contrast .btn-secondary { box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+.hero-contrast .text-glow-cyan { text-shadow: none; color: var(--neon-cyan); }
+
+/* mobile adjustment */
+@media (max-width: 768px) {
+  .hero-contrast p { font-size: 1rem; }
+}
+
+
 /* Palette selector */
 .palette-selector {
   display: inline-flex;
