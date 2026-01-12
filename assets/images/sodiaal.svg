@@ -2,6 +2,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200" role="img" aria-labelledby="title desc">
   <title id="title">Sodiaal logo</title>
   <desc id="desc">Text logo: SODIAAL in purple on dark navy background</desc>
-  <rect width="100%" height="100%" fill="#1a1f3a" />
-  <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron, 'Segoe UI', Roboto, sans-serif" font-size="72" fill="#b026ff" font-weight="700">SODIAAL</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="630" height="320" viewBox="0 0 630 320" preserveAspectRatio="xMidYMid meet">
+  <!-- Wrapper SVG that references the remote WebP logo from SPARTIATE924 repo -->
+  <image x="0" y="0" width="630" height="320" href="https://raw.githubusercontent.com/SPARTIATE924/Portfolio-Massin/main/assets/images/logo-vectoriel-sodiaal.webp" preserveAspectRatio="xMidYMid meet" />
+</svg>
 </svg>
