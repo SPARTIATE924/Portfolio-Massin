@@ -71,8 +71,17 @@
                         <!-- CV Preview: embedded iframe + actions -->
                         <div class="glass-effect p-8 rounded-2xl mt-8" data-animate>
                             <h3 class="text-2xl font-bold mb-4 text-white">Aperçu du CV</h3>
-                            <div style="width:100%; height:calc(100vh - 160px); min-height:840px; padding:32px; box-sizing:border-box;">
-                                <iframe src="assets/images/Massin CV (2).svg" title="Aperçu CV" loading="lazy" class="w-full h-full border rounded" style="border:1px solid rgba(255,255,255,0.06); display:block;"></iframe>
+                            <div class="max-w-5xl mx-auto mb-8">
+                                <div class="glass-effect p-4 rounded-2xl">
+                                    <img src="assets/images/Massin CV (2).svg"
+                                         alt="Aperçu du CV"
+                                         loading="lazy" decoding="async"
+                                         class="w-full rounded-lg">
+                                    <p class="text-sm text-gray-400 text-center mt-4 font-mono">
+                                        <i class="fas fa-info-circle text-neon-cyan mr-2"></i>
+                                        Aperçu complet du CV (cliquer sur "Ouvrir dans un nouvel onglet" pour télécharger)
+                                    </p>
+                                </div>
                             </div>
                             <div class="mt-4 flex gap-4 justify-center">
                                 <a href="assets/images/Massin CV (2).svg" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-6 py-3 text-lg font-semibold text-white rounded-lg transition-all hover:scale-105" style="background-color: var(--neon-cyan); box-shadow: var(--shadow-neon-cyan);">
