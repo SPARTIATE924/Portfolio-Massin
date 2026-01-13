@@ -24,9 +24,3 @@ Site déployé (GitHub Pages): https://massin-aliouche.github.io/Portfolio-Massi
 
 - Le site est déjà configuré pour GitHub Pages via `.github/workflows/deploy-pages.yml` (publish à chaque push sur `main`).
 - Pour **Netlify** : ajout d'un fichier `netlify.toml` (présent dans le dépôt) ; tu peux utiliser un bouton **Deploy to Netlify** (manuellement depuis l'UI Netlify) pour créer un site avec previews branch par branch.
-
----
-
-## Besoin d'aide ?
-
-Dis-moi si tu veux que j'ajoute d'autres flux par défaut (ex: Le Monde Informatique, ZATAZ) ou que je déploie un proxy serverless pour garantir la disponibilité des RSS (je peux créer un Cloudflare Worker minimal en quelques minutes).
