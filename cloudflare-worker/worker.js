@@ -2,7 +2,7 @@ addEventListener('fetch', event => {
   event.respondWith(handle(event.request))
 })
 
-const RAW_RSS = 'https://raw.githubusercontent.com/Massin-Aliouche/Portfolio-Massin/main/Portfolio/assets/data/rss.json'
+const RAW_RSS = 'https://raw.githubusercontent.com/Massin-Aliouche/Portfolio-Massin/main/assets/data/rss.json'
 
 async function handle(request) {
   const url = new URL(request.url)
