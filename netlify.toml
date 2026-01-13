@@ -1,9 +1,0 @@
-[build]
-  publish = "."
-  command = ""
-
-[context.production]
-  environment = { }
-
-[dev]
-  command = ""
