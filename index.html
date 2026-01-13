@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de ALIOUCHE Massin - Étudiant BTS SIO SISR spécialisé en cybersécurité et administration systèmes">
+    <title>ALIOUCHE Massin | Portfolio BTS SIO SISR</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-effect">
+        <nav class="container mx-auto px-6 py-4" x-data="{ mobileMenuOpen: false }">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="index.html" class="text-2xl font-bold text-glow-cyan">
+                    ALIOUCHE Massin
+                </a>
+
+                <!-- Desktop Navigation -->
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="alternance.html" class="nav-link">Alternance</a></li>
+                    <li><a href="competence.html" class="nav-link">Compétences</a></li>
+                    <li><a href="projets.html" class="nav-link">Projets</a></li>
+                    <li><a href="vt.html" class="nav-link">Veille Techno</a></li>
+                    <li><a href="cv.html" class="nav-link">CV</a></li>
+                </ul>
+
+                <!-- Mobile Menu Button -->
+                <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-neon-cyan text-2xl focus:outline-none" aria-label="Toggle menu">
+                    <i class="fas" :class="mobileMenuOpen ? 'fa-times' : 'fa-bars'"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div x-show="mobileMenuOpen"
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0 transform scale-90"
+                 x-transition:enter-end="opacity-100 transform scale-100"
+                 x-transition:leave="transition ease-in duration-200"
+                 x-transition:leave-start="opacity-100 transform scale-100"
+                 x-transition:leave-end="opacity-0 transform scale-90"
+                 class="mobile-menu md:hidden">
+                <nav>
+                    <a href="index.html" class="block py-3">Accueil</a>
+                    <a href="alternance.html" class="block py-3">Alternance</a>
+                    <a href="competence.html" class="block py-3">Compétences</a>
+                    <a href="projets.html" class="block py-3">Projets</a>
+                    <a href="vt.html" class="block py-3">Veille Techno</a>
+                    <a href="cv.html" class="block py-3">CV</a>
+                </nav>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="min-h-screen flex items-center relative overflow-hidden hero-contrast" style="background: linear-gradient(135deg, rgba(2,9,25,0.75), rgba(8,24,40,0.6)), linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);">
+            <div class="container mx-auto px-6 py-20">
+                <div class="grid md:grid-cols-2 gap-12 items-center" data-animate>
+                    <!-- Text Content -->
+                    <div>
+                        <h1 class="text-5xl md:text-6xl font-black text-glow-cyan mb-6">
+                            Découvrez Mon Portfolio
+                        </h1>
+                        <p class="text-xl text-gray-300 mb-4">
+                            Je suis <span class="text-neon-cyan font-semibold">ALIOUCHE Massin</span>, étudiant en BTS - SIO 2ème année Option SISR chez Nexa Lyon.
+                        </p>
+                        <p class="text-lg text-gray-400 mb-8">
+                            Passionné par la cybersécurité et l'administration systèmes, je développe mes compétences à travers des projets concrets et une alternance enrichissante chez Sodiaal.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="cv.html" class="btn-primary">
+                                <i class="fas fa-file-pdf mr-2"></i>
+                                Voir mon CV
+                            </a>
+                            <a href="projets.html" class="btn-secondary">
+                                <i class="fas fa-folder-open mr-2"></i>
+                                Mes Projets
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Profile Image -->
+                    <div class="flex justify-center">
+                        <div class="relative w-full max-w-md aspect-square">
+                            <div class="w-full h-full rounded-2xl overflow-hidden border-2 border-neon-cyan neon-pulse">
+                                <img src="https://placehold.co/800x800/1a1f3a/00f0ff?text=ALIOUCHE+Massin&font=orbitron"
+                                     alt="ALIOUCHE Massin - Photo de profil"
+                                     class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section class="py-20 bg-gradient-to-b from-bg-secondary to-bg-primary">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-bold text-glow-green text-center mb-16" data-animate>
+                    À propos de moi
+                </h2>
+
+                <div class="max-w-4xl mx-auto">
+                    <div class="glass-effect p-8 md:p-12 rounded-2xl" data-animate>
+                        <div class="flex items-start gap-6 mb-8">
+                            <div class="flex-shrink-0">
+                                <div class="w-16 h-16 bg-neon-cyan/10 rounded-full flex items-center justify-center border border-neon-cyan/30">
+                                    <i class="fas fa-user text-2xl text-neon-cyan"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2 text-neon-cyan">ALIOUCHE Massin</h3>
+                                <p class="text-gray-400 font-mono text-sm">Étudiant BTS SIO SISR | 2ème année</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 text-gray-300 leading-relaxed">
+                            <p>
+                                Étudiant en deuxième année de <strong class="text-neon-cyan">BTS - Services Informatiques aux Organisations</strong>, je suis pleinement investi dans ma formation en alternance. Ma vie est aussi rythmée par mes passions pour la psychologie, les sports de combats et les jeux vidéo.
+                            </p>
+                            <p>
+                                Aujourd'hui, mon objectif est de continuer à progresser dans l'administration des systèmes et réseaux, de gagner en autonomie sur les projets d'infrastructure, et à terme de me spécialiser davantage en <strong class="text-neon-green">cybersécurité</strong> ou en <strong class="text-neon-purple">administration cloud</strong>. Je suis motivé, curieux et prêt à m'investir dans tous mes futurs objectifs.
+                            </p>
+                        </div>
+
+                        <!-- Skills Tags -->
+                        <div class="flex flex-wrap gap-3 mt-8 pt-8 border-t border-neon-cyan/20">
+                            <span class="skill-tag">
+                                <i class="fas fa-shield-halved mr-2"></i>Cybersécurité
+                            </span>
+                            <span class="skill-tag">
+                                <i class="fas fa-cloud mr-2"></i>Cloud Administration
+                            </span>
+                            <span class="skill-tag">
+                                <i class="fas fa-network-wired mr-2"></i>Active Directory
+                            </span>
+                            <span class="skill-tag">
+                                <i class="fas fa-server mr-2"></i>Proxmox
+                            </span>
+                            <span class="skill-tag">
+                                <i class="fas fa-code mr-2"></i>Infrastructure
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Links Section -->
+        <section class="py-20 bg-bg-secondary">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12 text-white" data-animate>
+                    Explorer mon parcours
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Card 1: Alternance -->
+                    <a href="alternance.html" class="skill-card hover-lift group" data-animate>
+                        <div class="icon-container">
+                            <i class="fas fa-building text-5xl text-neon-purple group-hover:text-neon-cyan transition-colors"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-neon-purple group-hover:text-neon-cyan transition-colors">Mon Alternance</h3>
+                        <p class="text-gray-400">Découvrez mon expérience chez Sodiaal et mes missions quotidiennes.</p>
+                    </a>
+
+                    <!-- Card 2: Compétences -->
+                    <a href="competence.html" class="skill-card hover-lift group" data-animate>
+                        <div class="icon-container">
+                            <i class="fas fa-chart-line text-5xl text-neon-green group-hover:text-neon-cyan transition-colors"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-neon-green group-hover:text-neon-cyan transition-colors">Mes Compétences</h3>
+                        <p class="text-gray-400">Explorez mes compétences techniques acquises en formation et en entreprise.</p>
+                    </a>
+
+                    <!-- Card 3: Projets -->
+                    <a href="projets.html" class="skill-card hover-lift group" data-animate>
+                        <div class="icon-container">
+                            <i class="fas fa-laptop-code text-5xl text-neon-cyan group-hover:text-neon-green transition-colors"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-neon-cyan group-hover:text-neon-green transition-colors">Mes Projets</h3>
+                        <p class="text-gray-400">Consultez mes réalisations concrètes en infrastructure et cybersécurité.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-neon-cyan/30 py-12" style="background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-surface) 100%);">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Column 1: About -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-neon-cyan">ALIOUCHE Massin</h3>
+                    <p class="text-gray-400 text-sm">
+                        Étudiant en BTS SIO SISR, passionné par la cybersécurité et l'administration systèmes.
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-neon-green">Liens Rapides</h3>
+                    <ul class="space-y-2">
+                        <li><a href="alternance.html" class="text-gray-400 hover:text-neon-cyan transition-colors">Alternance</a></li>
+                        <li><a href="competence.html" class="text-gray-400 hover:text-neon-cyan transition-colors">Compétences</a></li>
+                        <li><a href="projets.html" class="text-gray-400 hover:text-neon-cyan transition-colors">Projets</a></li>
+                        <li><a href="vt.html" class="text-gray-400 hover:text-neon-cyan transition-colors">Veille Technologique</a></li>
+                        <li><a href="cv.html" class="text-gray-400 hover:text-neon-cyan transition-colors">CV</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-neon-pink">Contact</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="mailto:massin.aliouche@gmail.com" class="text-gray-400 hover:text-neon-cyan transition-colors flex items-center gap-2">
+                                <i class="fas fa-envelope text-neon-pink"></i>
+                                massin.aliouche@gmail.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/aliouche-massin/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-neon-cyan transition-colors flex items-center gap-2">
+                                <i class="fab fa-linkedin text-neon-pink"></i>
+                                LinkedIn
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="text-center mb-4">
+                <a href="mentions-legales.html" class="text-gray-400 hover:text-neon-cyan transition-colors">Mentions légales</a>
+            </div>
+            <div class="text-center pt-8 border-t border-neon-cyan/20">
+                <p class="text-gray-500 text-sm font-mono">
+                    © 2026 ALIOUCHE Massin | BTS SIO SISR | Portfolio Tech/Cybersécurité
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Ensure homepage uses Bright theme by default -->
+    <script>
+      (function(){
+        try {
+          // Force bright theme on homepage unless user explicitly set a preference
+          var saved = localStorage.getItem('theme');
+          if (!saved || saved === 'dark') {
+            document.documentElement.classList.add('theme-bright');
+            localStorage.setItem('theme','bright');
+          }
+        } catch(e) { /* ignore */ }
+      })();
+    </script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
