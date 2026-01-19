@@ -6,14 +6,6 @@ Site déployé (GitHub Pages): https://massin-aliouche.github.io/Portfolio-Massi
 
 ## Documentation rapide
 
-### Flux RSS (page `vt.html`)
-
-- Le site agrège des flux RSS côté client et les affiche dans la section **Flux RSS & Actualités**.
-- Les flux par défaut inclus : ZDNet (sécurité), The Hacker News, KrebsOnSecurity, Ars Technica.
-- Pour ajouter un flux, modifie l'objet `FEEDS` dans `assets/js/main.js` (clé : id, propriété `url`) puis commit/push.
-- Limitation CORS : les navigateurs bloquent habituellement les requêtes cross-origin vers certains flux. Le code utilise un proxy public : `https://api.allorigins.win/raw?url=` pour contourner, **mais** ce proxy peut être lent ou indisponible. Pour une solution fiable en production, il est recommandé de déployer un petit proxy côté serveur (Cloudflare Worker, Vercel Function, Netlify Function) qui renverra le contenu RSS.
-- Le système met en cache les résultats dans `localStorage` (TTL 10 minutes) pour réduire les appels réseau.
-
 ### Thèmes & palettes
 
 - Un **toggle** (soleil/lune) dans l'en-tête bascule entre le thème sombre par défaut et un thème **Bright**. La préférence est sauvegardée dans `localStorage`.
