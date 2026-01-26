@@ -339,10 +339,34 @@
 
     <script src="assets/js/main.js"></script>
     <script>
+        // Icônes et noms pour chaque flux
+        const feedInfo = {
+            'certfr-feed': { icon: 'fa-shield-alt', name: 'CERT-FR', desc: 'Alertes de sécurité officielles' },
+            'hackernews-feed': { icon: 'fa-user-secret', name: 'The Hacker News', desc: 'Actualités cybersécurité' },
+            'ai-feed': { icon: 'fa-robot', name: 'AI News', desc: 'Actualités Intelligence Artificielle' },
+            'network-feed': { icon: 'fa-network-wired', name: 'Network World', desc: 'Actualités réseau & IT' }
+        };
+
         // Fonction pour charger les flux RSS via rss2json API
         async function loadRSSFeed(feedUrl, siteUrl, containerId, color) {
             const container = document.getElementById(containerId);
             const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}&count=5`;
+            const info = feedInfo[containerId];
+            
+            const fallbackHTML = `
+                <a href="${siteUrl}" target="_blank" rel="noopener noreferrer" 
+                   class="block p-4 rounded-lg bg-bg-tertiary/40 hover:bg-bg-tertiary/70 transition-all border border-${color}/20 hover:border-${color}/50 text-center group">
+                    <div class="w-16 h-16 mx-auto mb-3 rounded-full bg-${color}/10 flex items-center justify-center group-hover:bg-${color}/20 transition-all">
+                        <i class="fas ${info.icon} text-2xl text-${color}"></i>
+                    </div>
+                    <h4 class="text-sm font-semibold text-gray-200 mb-1">${info.name}</h4>
+                    <p class="text-xs text-gray-500 mb-3">${info.desc}</p>
+                    <span class="inline-flex items-center gap-1 text-xs text-${color} group-hover:underline">
+                        <span>Visiter le site</span>
+                        <i class="fas fa-external-link-alt text-[10px]"></i>
+                    </span>
+                </a>
+            `;
             
             try {
                 const response = await fetch(apiUrl);
@@ -364,20 +388,10 @@
                         `;
                     }).join('');
                 } else {
-                    container.innerHTML = `
-                        <div class="text-center py-4">
-                            <p class="text-gray-400 text-sm">Impossible de charger le flux RSS</p>
-                            <a href="${siteUrl}" target="_blank" class="text-neon-cyan text-xs hover:underline">Accéder au site</a>
-                        </div>
-                    `;
+                    container.innerHTML = fallbackHTML;
                 }
             } catch (error) {
-                container.innerHTML = `
-                    <div class="text-center py-4">
-                        <p class="text-gray-400 text-sm">Erreur de chargement</p>
-                        <a href="${siteUrl}" target="_blank" class="text-neon-cyan text-xs hover:underline">Accéder au site</a>
-                    </div>
-                `;
+                container.innerHTML = fallbackHTML;
             }
         }
 
