@@ -80,32 +80,81 @@
         <!-- RSS Feeds Section -->
         <section class="py-16 bg-bg-primary">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-12 text-glow-green" data-animate>
+                <h2 class="text-3xl font-bold text-center mb-8 text-glow-green" data-animate>
                     <i class="fas fa-rss mr-3"></i>Flux RSS en temps réel
                 </h2>
-                <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                    <!-- CERT-FR Feed -->
-                    <div class="glass-effect p-6 rounded-2xl" data-animate>
-                        <h3 class="text-xl font-bold mb-4 text-neon-cyan flex items-center gap-2">
+                
+                <!-- TLDR Newsletter Banner -->
+                <div class="max-w-4xl mx-auto mb-10 glass-effect p-6 rounded-2xl border border-neon-purple/30" data-animate>
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-envelope-open-text text-4xl text-neon-purple"></i>
+                            <div>
+                                <h3 class="text-xl font-bold text-neon-purple">TLDR Newsletter</h3>
+                                <p class="text-gray-400 text-sm">Ma source quotidienne pour l'actualité Tech, IA et Cybersécurité</p>
+                            </div>
+                        </div>
+                        <a href="https://tldr.tech/" target="_blank" rel="noopener noreferrer" 
+                           class="inline-flex items-center gap-2 px-6 py-3 bg-neon-purple/20 border border-neon-purple/50 rounded-lg text-neon-purple hover:bg-neon-purple/30 transition-all">
+                            <span>S'abonner à TLDR</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+                    <!-- Cybersécurité - CERT-FR -->
+                    <div class="glass-effect p-5 rounded-2xl" data-animate>
+                        <h3 class="text-lg font-bold mb-4 text-neon-cyan flex items-center gap-2">
                             <i class="fas fa-shield-alt"></i>
-                            CERT-FR - Alertes de sécurité
+                            CERT-FR
                         </h3>
-                        <div id="certfr-feed" class="space-y-4 max-h-96 overflow-y-auto pr-2">
-                            <p class="text-gray-400 text-center py-4">
-                                <i class="fas fa-spinner fa-spin mr-2"></i>Chargement des actualités...
+                        <p class="text-xs text-gray-500 mb-3">Alertes sécurité France</p>
+                        <div id="certfr-feed" class="space-y-3 max-h-80 overflow-y-auto pr-2">
+                            <p class="text-gray-400 text-center py-4 text-sm">
+                                <i class="fas fa-spinner fa-spin mr-2"></i>Chargement...
                             </p>
                         </div>
                     </div>
 
-                    <!-- The Hacker News Feed -->
-                    <div class="glass-effect p-6 rounded-2xl" data-animate>
-                        <h3 class="text-xl font-bold mb-4 text-neon-pink flex items-center gap-2">
-                            <i class="fas fa-newspaper"></i>
+                    <!-- Cybersécurité - The Hacker News -->
+                    <div class="glass-effect p-5 rounded-2xl" data-animate>
+                        <h3 class="text-lg font-bold mb-4 text-neon-pink flex items-center gap-2">
+                            <i class="fas fa-user-secret"></i>
                             The Hacker News
                         </h3>
-                        <div id="hackernews-feed" class="space-y-4 max-h-96 overflow-y-auto pr-2">
-                            <p class="text-gray-400 text-center py-4">
-                                <i class="fas fa-spinner fa-spin mr-2"></i>Chargement des actualités...
+                        <p class="text-xs text-gray-500 mb-3">Cybersécurité mondiale</p>
+                        <div id="hackernews-feed" class="space-y-3 max-h-80 overflow-y-auto pr-2">
+                            <p class="text-gray-400 text-center py-4 text-sm">
+                                <i class="fas fa-spinner fa-spin mr-2"></i>Chargement...
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- IA - AI News -->
+                    <div class="glass-effect p-5 rounded-2xl" data-animate>
+                        <h3 class="text-lg font-bold mb-4 text-neon-purple flex items-center gap-2">
+                            <i class="fas fa-robot"></i>
+                            AI News
+                        </h3>
+                        <p class="text-xs text-gray-500 mb-3">Intelligence Artificielle</p>
+                        <div id="ai-feed" class="space-y-3 max-h-80 overflow-y-auto pr-2">
+                            <p class="text-gray-400 text-center py-4 text-sm">
+                                <i class="fas fa-spinner fa-spin mr-2"></i>Chargement...
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Réseau/IT - Network World -->
+                    <div class="glass-effect p-5 rounded-2xl" data-animate>
+                        <h3 class="text-lg font-bold mb-4 text-neon-green flex items-center gap-2">
+                            <i class="fas fa-network-wired"></i>
+                            Network World
+                        </h3>
+                        <p class="text-xs text-gray-500 mb-3">Réseaux & Infrastructure IT</p>
+                        <div id="network-feed" class="space-y-3 max-h-80 overflow-y-auto pr-2">
+                            <p class="text-gray-400 text-center py-4 text-sm">
+                                <i class="fas fa-spinner fa-spin mr-2"></i>Chargement...
                             </p>
                         </div>
                     </div>
@@ -336,6 +385,8 @@
         document.addEventListener('DOMContentLoaded', () => {
             loadRSSFeed('https://www.cert.ssi.gouv.fr/feed/', 'certfr-feed', 'neon-cyan');
             loadRSSFeed('https://feeds.feedburner.com/TheHackersNews', 'hackernews-feed', 'neon-pink');
+            loadRSSFeed('https://www.artificialintelligence-news.com/feed/', 'ai-feed', 'neon-purple');
+            loadRSSFeed('https://www.networkworld.com/index.rss', 'network-feed', 'neon-green');
         });
     </script>
 </body>
