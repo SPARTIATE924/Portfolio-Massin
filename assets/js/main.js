@@ -3,6 +3,28 @@
 // Navigation & Interactive Features
 // ============================================
 
+// ============================================
+// SECURITY: HTML Escape function to prevent XSS
+// ============================================
+function escapeHtml(text) {
+  if (!text) return '';
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+// Sanitize URL to prevent javascript: protocol attacks
+function sanitizeUrl(url) {
+  if (!url) return '#';
+  try {
+    const parsed = new URL(url, window.location.origin);
+    if (['http:', 'https:'].includes(parsed.protocol)) {
+      return parsed.href;
+    }
+  } catch (e) {}
+  return '#';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   // ============================================
   // 1. ACTIVE NAVIGATION HIGHLIGHTING
@@ -214,10 +236,15 @@ function setupRSSFeeds() {
     items.slice(0, max).forEach(it => {
       const card = document.createElement('article');
       card.className = 'rss-card';
+      // SECURITY: Use escapeHtml and sanitizeUrl to prevent XSS
+      const safeTitle = escapeHtml(it.title);
+      const safeLink = sanitizeUrl(it.link);
+      const safeDate = escapeHtml(formatDate(it.pubDate));
+      const safeExcerpt = escapeHtml((it.description || '').slice(0, 200)) + ((it.description && it.description.length>200)?'...':'');
       card.innerHTML = `
-        <h4><a class="rss-link" href="${it.link}" target="_blank" rel="noopener noreferrer">${it.title}</a></h4>
-        <div class="rss-meta">${formatDate(it.pubDate)}</div>
-        <div class="rss-excerpt">${(it.description || '').slice(0, 200)}${(it.description && it.description.length>200)?'...':''}</div>
+        <h4><a class="rss-link" href="${safeLink}" target="_blank" rel="noopener noreferrer">${safeTitle}</a></h4>
+        <div class="rss-meta">${safeDate}</div>
+        <div class="rss-excerpt">${safeExcerpt}</div>
       `;
       rssContainer.appendChild(card);
     });
@@ -416,10 +443,15 @@ function setupPaletteSelector() {
     items.slice(0, max).forEach(it => {
       const card = document.createElement('article');
       card.className = 'rss-card';
+      // SECURITY: Use escapeHtml and sanitizeUrl to prevent XSS
+      const safeTitle = escapeHtml(it.title);
+      const safeLink = sanitizeUrl(it.link);
+      const safeDate = escapeHtml(formatDate(it.pubDate));
+      const safeExcerpt = escapeHtml((it.description || '').slice(0, 200)) + ((it.description && it.description.length>200)?'...':'');
       card.innerHTML = `
-        <h4><a class="rss-link" href="${it.link}" target="_blank" rel="noopener noreferrer">${it.title}</a></h4>
-        <div class="rss-meta">${formatDate(it.pubDate)}</div>
-        <div class="rss-excerpt">${(it.description || '').slice(0, 200)}${(it.description && it.description.length>200)?'...':''}</div>
+        <h4><a class="rss-link" href="${safeLink}" target="_blank" rel="noopener noreferrer">${safeTitle}</a></h4>
+        <div class="rss-meta">${safeDate}</div>
+        <div class="rss-excerpt">${safeExcerpt}</div>
       `;
       rssContainer.appendChild(card);
     });
