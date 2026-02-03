@@ -1,0 +1,11 @@
+# Security Policy for massinaliouche.com
+# See https://securitytxt.org/ for more information
+
+Contact: mailto:contact@massinaliouche.com
+Contact: https://www.linkedin.com/in/aliouche-massin/
+Expires: 2027-02-03T00:00:00.000Z
+Preferred-Languages: fr, en
+Canonical: https://massinaliouche.com/.well-known/security.txt
+
+# This is a personal portfolio website with no user data collection.
+# If you find any security issues, please contact me via LinkedIn.
