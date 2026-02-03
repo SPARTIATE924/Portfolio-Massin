@@ -1,0 +1,6 @@
+# Portfolio ALIOUCHE Massin
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://massin-aliouche.github.io/Portfolio-Massin/sitemap.xml

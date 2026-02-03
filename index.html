@@ -6,6 +6,17 @@
     <meta name="description" content="Portfolio de ALIOUCHE Massin - Étudiant BTS SIO SISR spécialisé en cybersécurité et administration systèmes">
     <title>ALIOUCHE Massin | Portfolio BTS SIO SISR</title>
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://massin-aliouche.github.io/Portfolio-Massin/">
+    <meta property="og:title" content="ALIOUCHE Massin | Portfolio BTS SIO SISR">
+    <meta property="og:description" content="Étudiant en BTS SIO SISR, passionné par la cybersécurité et l'administration systèmes. Découvrez mes projets et compétences.">
+    <meta property="og:image" content="https://massin-aliouche.github.io/Portfolio-Massin/assets/images/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+
     <!-- Anti-FOUC: Hide page until styles are loaded -->
     <style>html{visibility:hidden;opacity:0;}</style>
 
@@ -30,6 +41,11 @@
     <script>document.addEventListener('DOMContentLoaded',()=>{document.documentElement.style.visibility='visible';document.documentElement.style.opacity='1';});</script>
 </head>
 <body>
+    <!-- Skip to main content (accessibility) -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-neon-cyan focus:text-bg-primary focus:px-4 focus:py-2 focus:rounded">
+        Aller au contenu principal
+    </a>
+
     <!-- Header / Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 glass-effect">
         <nav class="container mx-auto px-6 py-4" x-data="{ mobileMenuOpen: false }">
@@ -77,21 +93,25 @@
     </header>
 
     <!-- Main Content -->
-    <main class="pt-20">
+    <main id="main-content" class="pt-20">
         <!-- Hero Section -->
         <section class="min-h-screen flex items-center relative overflow-hidden hero-contrast" style="background: linear-gradient(135deg, rgba(2,9,25,0.75), rgba(8,24,40,0.6)), linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);">
             <div class="container mx-auto px-6 py-20">
                 <div class="grid md:grid-cols-2 gap-12 items-center" data-animate>
                     <!-- Text Content -->
                     <div>
+                        <p class="text-sm font-mono text-neon-green mb-4 tracking-wider">👋 Bienvenue sur mon portfolio</p>
                         <h1 class="text-5xl md:text-6xl font-black text-glow-cyan mb-6">
-                            Découvrez Mon Portfolio
+                            ALIOUCHE Massin
                         </h1>
-                        <p class="text-xl text-gray-300 mb-4 text-justify">
-                            Je suis <span class="text-neon-cyan font-semibold">ALIOUCHE Massin</span>, étudiant en BTS - SIO 2ème année Option SISR chez Nexa Lyon.
+                        <p class="text-2xl font-semibold text-neon-purple mb-4">
+                            Futur spécialiste Infrastructure & Cybersécurité
                         </p>
-                        <p class="text-lg text-gray-400 mb-8 text-justify">
-                            Passionné par la cybersécurité et l'administration systèmes, je développe mes compétences à travers des projets concrets et une alternance enrichissante chez Sodiaal.
+                        <p class="text-lg text-gray-300 mb-4 text-justify">
+                            Étudiant en <span class="text-neon-cyan font-semibold">BTS SIO SISR</span> 2ème année chez Nexa Lyon, en alternance chez <span class="text-neon-green font-semibold">Sodiaal</span>.
+                        </p>
+                        <p class="text-base text-gray-400 mb-8 text-justify">
+                            Passionné par la cybersécurité et l'administration systèmes, je développe mes compétences à travers des projets concrets d'infrastructure, de virtualisation et de sécurité.
                         </p>
                         <div class="flex flex-wrap gap-4">
                             <a href="cv.html" class="btn-primary">
@@ -102,6 +122,10 @@
                                 <i class="fas fa-folder-open mr-2"></i>
                                 Mes Projets
                             </a>
+                            <a href="mailto:massin.aliouche@gmail.com" class="btn-secondary" style="border-color: var(--neon-pink); color: var(--neon-pink);">
+                                <i class="fas fa-envelope mr-2"></i>
+                                Me contacter
+                            </a>
                         </div>
                     </div>
 
@@ -109,9 +133,11 @@
                     <div class="flex justify-center">
                         <div class="relative w-full max-w-md aspect-square">
                             <div class="w-full h-full rounded-2xl overflow-hidden border-2 border-neon-cyan neon-pulse">
-                                <img src="https://placehold.co/800x800/1a1f3a/00f0ff?text=ALIOUCHE+Massin&font=orbitron"
+                                <!-- TODO: Remplacer par ta vraie photo professionnelle -->
+                                <img src="assets/images/profile-photo.jpg"
                                      alt="ALIOUCHE Massin - Photo de profil"
-                                     class="w-full h-full object-cover">
+                                     class="w-full h-full object-cover"
+                                     onerror="this.src='https://ui-avatars.com/api/?name=Massin+Aliouche&size=800&background=0f3b6e&color=00bfff&bold=true&format=svg'">
                             </div>
                         </div>
                     </div>
@@ -248,6 +274,12 @@
                             <a href="https://www.linkedin.com/in/aliouche-massin/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-neon-cyan transition-colors flex items-center gap-2">
                                 <i class="fab fa-linkedin text-neon-pink"></i>
                                 LinkedIn
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Massin-Aliouche" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-neon-cyan transition-colors flex items-center gap-2">
+                                <i class="fab fa-github text-neon-pink"></i>
+                                GitHub
                             </a>
                         </li>
                     </ul>
