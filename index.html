@@ -6,6 +6,9 @@
     <meta name="description" content="Portfolio de ALIOUCHE Massin - Étudiant BTS SIO SISR spécialisé en cybersécurité et administration systèmes">
     <title>ALIOUCHE Massin | Portfolio BTS SIO SISR</title>
 
+    <!-- Anti-FOUC: Hide page until styles are loaded -->
+    <style>html{visibility:hidden;opacity:0;}</style>
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -22,6 +25,9 @@
 
     <!-- Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Anti-FOUC: Show page after load -->
+    <script>document.addEventListener('DOMContentLoaded',()=>{document.documentElement.style.visibility='visible';document.documentElement.style.opacity='1';});</script>
 </head>
 <body>
     <!-- Header / Navigation -->
