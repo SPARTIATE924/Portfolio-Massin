@@ -67,15 +67,15 @@
 
     <!-- Header / Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 glass-effect">
-        <nav class="container mx-auto px-6 py-4" x-data="{ mobileMenuOpen: false }">
+        <nav class="container mx-auto px-4 md:px-6 py-3 md:py-4" x-data="{ mobileMenuOpen: false }">
             <div class="flex items-center justify-between">
                 <!-- Logo -->
-                <a href="index.html" class="text-2xl font-bold text-glow-cyan">
+                <a href="index.html" class="text-xl md:text-2xl font-bold text-glow-cyan truncate max-w-[200px] md:max-w-none">
                     ALIOUCHE Massin
                 </a>
 
                 <!-- Desktop Navigation -->
-                <ul class="hidden md:flex space-x-8">
+                <ul class="hidden md:flex space-x-6 lg:space-x-8">
                     <li><a href="index.html" class="nav-link">Accueil</a></li>
                     <li><a href="alternance.html" class="nav-link">Alternance</a></li>
                     <li><a href="projets.html" class="nav-link">Projets</a></li>
@@ -85,7 +85,10 @@
                 </ul>
 
                 <!-- Mobile Menu Button -->
-                <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-neon-cyan text-2xl focus:outline-none" aria-label="Toggle menu">
+                <button @click="mobileMenuOpen = !mobileMenuOpen" 
+                        class="md:hidden text-neon-cyan text-2xl p-2 -mr-2 focus:outline-none focus:ring-2 focus:ring-neon-cyan rounded-lg z-[10000]" 
+                        aria-label="Toggle menu"
+                        :aria-expanded="mobileMenuOpen">
                     <i class="fas" :class="mobileMenuOpen ? 'fa-times' : 'fa-bars'"></i>
                 </button>
             </div>
@@ -93,19 +96,27 @@
             <!-- Mobile Menu -->
             <div x-show="mobileMenuOpen"
                  x-transition:enter="transition ease-out duration-300"
-                 x-transition:enter-start="opacity-0 transform scale-90"
-                 x-transition:enter-end="opacity-100 transform scale-100"
+                 x-transition:enter-start="opacity-0"
+                 x-transition:enter-end="opacity-100"
                  x-transition:leave="transition ease-in duration-200"
-                 x-transition:leave-start="opacity-100 transform scale-100"
-                 x-transition:leave-end="opacity-0 transform scale-90"
-                 class="mobile-menu md:hidden">
+                 x-transition:leave-start="opacity-100"
+                 x-transition:leave-end="opacity-0"
+                 @click.away="mobileMenuOpen = false"
+                 class="mobile-menu md:hidden"
+                 x-cloak>
+                <!-- Close button inside menu -->
+                <button @click="mobileMenuOpen = false" 
+                        class="absolute top-4 right-4 text-3xl text-neon-cyan p-2 focus:outline-none"
+                        aria-label="Fermer le menu">
+                    <i class="fas fa-times"></i>
+                </button>
                 <nav>
-                    <a href="index.html" class="block py-3">Accueil</a>
-                    <a href="alternance.html" class="block py-3">Alternance</a>
-                    <a href="projets.html" class="block py-3">Projets</a>
-                    <a href="competence.html" class="block py-3">Compétences</a>
-                    <a href="vt.html" class="block py-3">Veille Techno</a>
-                    <a href="cv.html" class="block py-3">CV</a>
+                    <a href="index.html" @click="mobileMenuOpen = false">Accueil</a>
+                    <a href="alternance.html" @click="mobileMenuOpen = false">Alternance</a>
+                    <a href="projets.html" @click="mobileMenuOpen = false">Projets</a>
+                    <a href="competence.html" @click="mobileMenuOpen = false">Compétences</a>
+                    <a href="vt.html" @click="mobileMenuOpen = false">Veille Techno</a>
+                    <a href="cv.html" @click="mobileMenuOpen = false">CV</a>
                 </nav>
             </div>
         </nav>

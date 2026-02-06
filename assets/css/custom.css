@@ -447,46 +447,221 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 100%;
   height: 100vh;
+  height: 100dvh; /* Dynamic viewport height for mobile browsers */
   background-color: rgba(10, 14, 39, 0.98);
   backdrop-filter: blur(10px);
-  z-index: 40;
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 60px;
 }
 
 .mobile-menu nav {
   text-align: center;
+  width: 100%;
+  padding: 0 1.5rem;
 }
 
 .mobile-menu a {
   display: block;
   color: var(--text-primary);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
   text-decoration: none;
-  padding: 1rem;
-  transition: color 0.3s ease;
+  padding: 1rem 1.5rem;
+  margin: 0.5rem 0;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.02);
 }
 
-.mobile-menu a:hover {
+.mobile-menu a:hover,
+.mobile-menu a:active {
   color: var(--neon-cyan);
+  background: rgba(0, 191, 255, 0.1);
 }
 
 /* ============================================
    11. RESPONSIVE UTILITIES
    ============================================ */
-@media (max-width: 768px) {
-  .skill-card, .project-card, .news-card {
-    padding: 1.5rem;
+/* Mobile First - Base styles for small screens */
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
   }
-
+  
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
   h1 {
-    font-size: 2.5rem;
+    font-size: 1.75rem !important;
+    line-height: 1.2;
   }
 
   h2 {
+    font-size: 1.5rem !important;
+  }
+
+  h3 {
+    font-size: 1.25rem !important;
+  }
+  
+  .skill-card, .project-card, .news-card, .rss-card {
+    padding: 1rem;
+  }
+  
+  .glass-effect {
+    padding: 1rem !important;
+  }
+  
+  .btn-primary, .btn-secondary {
+    padding: 0.6rem 1rem;
+    font-size: 0.875rem;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .tech-badge {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.75rem;
+  }
+  
+  /* Fix hero section on mobile */
+  .min-h-screen {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+  
+  /* Grid fixes */
+  .grid {
+    gap: 1rem !important;
+  }
+  
+  /* Image sizing */
+  .profile-image,
+  img[alt*="profile"],
+  img[alt*="Photo"] {
+    width: 150px !important;
+    height: 150px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .skill-card, .project-card, .news-card {
+    padding: 1.25rem;
+  }
+
+  h1 {
     font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  /* Stack grids on mobile */
+  .grid-cols-2,
+  .md\\:grid-cols-2,
+  .grid-cols-3,
+  .md\\:grid-cols-3 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Footer fixes */
+  footer .grid {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+  }
+  
+  /* Navigation header */
+  header nav {
+    padding: 0.75rem 1rem;
+  }
+  
+  header .text-2xl {
+    font-size: 1.25rem;
+  }
+  
+  /* Section padding */
+  section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  
+  .py-20 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  
+  .py-16 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+  
+  /* Flex direction on mobile */
+  .flex-wrap {
+    gap: 0.5rem;
+  }
+  
+  /* Text alignment */
+  .text-center-mobile {
+    text-align: center !important;
+  }
+  
+  /* Hide desktop-only elements */
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Fix for iOS Safari address bar */
+@supports (-webkit-touch-callout: none) {
+  .min-h-screen {
+    min-height: -webkit-fill-available;
+  }
+  
+  .mobile-menu {
+    height: -webkit-fill-available;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .skill-card:hover,
+  .project-card:hover {
+    transform: none;
+  }
+  
+  /* Larger touch targets */
+  .nav-link,
+  .btn-primary,
+  .btn-secondary,
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Remove hover effects that don't work on touch */
+  .hover-lift:hover {
+    transform: none;
   }
 }
 
@@ -653,4 +828,26 @@ h1, h2, h3, h4, h5, h6 {
 :focus-visible {
   outline: 2px solid var(--neon-cyan);
   outline-offset: 2px;
+}
+
+/* Hide Alpine.js elements until loaded */
+[x-cloak] {
+  display: none !important;
+}
+
+/* Ensure mobile menu is above everything */
+.mobile-menu {
+  z-index: 9999 !important;
+}
+
+/* Fix for header on mobile */
+header.fixed {
+  z-index: 9998;
+}
+
+/* Prevent body scroll when mobile menu is open */
+body.menu-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
 }
